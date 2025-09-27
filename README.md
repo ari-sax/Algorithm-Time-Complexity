@@ -23,81 +23,44 @@
 
 ### Java Program
 1. Compile the Java file:
-   ```bash
+   '''bash
    javac ComplexityExperiment.java
 
 2. Run the program:
+   '''bash
+   java ComplexityExperiment
 
-  ```bash
-  java ComplexityExperiment
-
-3. Output: Experimental runtime for each n in nanoseconds.
+4. Output: Experimental runtime for each n in nanoseconds.
 
 Python Plot
-Ensure Python 3 is installed along with matplotlib.
-
-Run the script:
-
-bash
-Copy code
-python plot_results.py
-Output: Log-log plot showing experimental vs adjusted theoretical runtime.
+1.Ensure Python 3 is installed along with matplotlib.
+2.Run the script:
+   '''bash
+   python plot_results.py
+3. Output: Log-log plot showing experimental vs adjusted theoretical runtime.
 
 Purpose of This Project
+
 Theoretical Analysis:
-
-Outer loop: 
-𝑂
-(
-log
-⁡
-log
-⁡
-𝑛
-)
-O(loglogn)
-
-Inner loop: 
-𝑂
-(
-log
-⁡
-log
-⁡
-𝑛
-)
-O(loglogn)
-
-Total time complexity: 
-𝑂
-(
-(
-log
-⁡
-log
-⁡
-𝑛
-)
-2
-)
-O((loglogn) 
-2
- )
+- Outer loop: 𝑂(log log 𝑛)
+- Inner loop: 𝑂(log log 𝑛)
+- Total time complexity: 𝑂((log log 𝑛)^2)
 
 Experimental Validation:
+- Measures real execution time for different n.
+- Scales theoretical values for direct comparison.
+- Confirms that the experimental trend follows the predicted theoretical growth.
 
-Measures real execution time for different n.
+Conclusions:
+- The theoretical analysis predicted 𝑂((log log 𝑛)^2) time complexity.
+- Experimental results validated the theoretical hypothesis.
+- Adjusted theoretical values closely follow experimental results on a log-log plot.
+- Minor fluctuations in experimental runtimes are normal due to system variability.
 
-Scales theoretical values for direct comparison.
+GitHub Code Repository:
+The Java and Python files for this project can be accessed at:
+https://github.com/ari-sax/AlgorithmTimeComplexity.git
 
-Confirms that the experimental trend follows the predicted theoretical growth.
-
-GitHub Repository
-All files and instructions for running the project are included here.
-
-Link: https://github.com/YourUsername/AlgorithmTimeComplexity
-
-Notes
-The experimental runtime may vary slightly due to system performance and randomness in array initialization.
-
-Repetition of the snippet in Java ensures smoother and more reliable measurements for small values of n.
+Notes:
+- Experimental runtime may vary slightly depending on system performance.
+- Repetition of the snippet in Java ensures smoother and more reliable measurements.
