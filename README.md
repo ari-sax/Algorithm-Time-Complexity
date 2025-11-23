@@ -5,62 +5,81 @@
 
 ---
 
-## **Files Included**
+## Files Included
 
-1. **ComplexityExperiment.java**  
-   - Java program that implements the nested loops snippet.  
-   - Measures runtime for various input sizes (`n`) by repeating the snippet multiple times to get smoother measurements.  
-   - Prints the experimental runtime in nanoseconds for each `n`.
+### 1. ComplexityExperiment.java
+- Java program that implements the nested while-loops.  
+- Measures runtime for a range of input sizes (`n`), repeating the snippet multiple times for smoother, more reliable measurements.  
+- Prints the experimental runtime in nanoseconds for each input size.
 
-2. **plot_results.py**  
-   - Python script to visualize the experimental results against the adjusted theoretical values.  
-   - Computes theoretical values as \((\log\log n)^2\) and scales them for comparison.  
-   - Plots experimental vs adjusted theoretical runtime on a log-log scale.
+### 2. plot_results.py
+- Python script used to visualize the experimental Java results.  
+- Computes theoretical values proportional to ((log log n)^2) and scales them to match experimental magnitudes.  
+- Produces a log-log plot comparing experimental vs. adjusted theoretical runtime.
 
 ---
 
-## **How to Run**
+## How to Run
 
 ### Java Program
+
 1. Compile the Java file:
-   '''bash
+   ```bash
    javac ComplexityExperiment.java
+   ```
 
 2. Run the program:
-   '''bash
+   ```bash
    java ComplexityExperiment
+   ```
 
-4. Output: Experimental runtime for each n in nanoseconds.
+3. Output:
+- Prints experimental runtime for each value of `n` in nanoseconds.
 
-Python Plot
-1.Ensure Python 3 is installed along with matplotlib.
-2.Run the script:
-   '''bash
+---
+
+### Python Plot
+
+1. Ensure Python 3 and matplotlib are installed.  
+2. Run the script:
+   ```bash
    python plot_results.py
-3. Output: Log-log plot showing experimental vs adjusted theoretical runtime.
+   ```
+3. Output:
+- A log-log plot showing experimental vs. adjusted theoretical runtime.
 
-Purpose of This Project
+---
 
-Theoretical Analysis:
-- Outer loop: 𝑂(log log 𝑛)
-- Inner loop: 𝑂(log log 𝑛)
-- Total time complexity: 𝑂((log log 𝑛)^2)
+## Purpose of This Project
 
-Experimental Validation:
-- Measures real execution time for different n.
-- Scales theoretical values for direct comparison.
-- Confirms that the experimental trend follows the predicted theoretical growth.
+### Theoretical Analysis
+- Outer loop: O(log log n)  
+- Inner loop: O(log log n)  
+- Overall complexity: O((log log n)^2)
 
-Conclusions:
-- The theoretical analysis predicted 𝑂((log log 𝑛)^2) time complexity.
-- Experimental results validated the theoretical hypothesis.
-- Adjusted theoretical values closely follow experimental results on a log-log plot.
-- Minor fluctuations in experimental runtimes are normal due to system variability.
+### Experimental Validation
+- Measures true execution time for increasing values of `n`.  
+- Computes theoretical values manually using the ((log log n)^2) formula.  
+- Adjusts (scales) theoretical values to match experimental scale for direct comparison.  
+- Confirms that experimental growth follows the predicted theoretical trend.
 
-GitHub Code Repository:
-The Java and Python files for this project can be accessed at:
-https://github.com/ari-sax/AlgorithmTimeComplexity.git
+---
 
-Notes:
-- Experimental runtime may vary slightly depending on system performance.
-- Repetition of the snippet in Java ensures smoother and more reliable measurements.
+## Conclusions
+- The theoretical analysis predicted a time complexity of O((log log n)^2).  
+- Experimental results strongly validate the theoretical prediction.  
+- The adjusted theoretical curve closely follows the experimental results on a log-log scale.  
+- Minor fluctuations in runtime occur due to hardware, OS scheduling, and JVM warm-up, which is normal for micro-benchmarks.
+
+---
+
+## GitHub Code Repository
+
+The Java and Python files for this project are available at:  
+https://github.com/ari-sax/Algorithm-Time-Complexity.git
+
+---
+
+## Notes
+- Runtime measurements may vary depending on system performance and background activity.  
+- Loop repetition inside the Java code helps reduce noise and produce more stable timing results.
